@@ -30,12 +30,14 @@ button:hover {
 }
 #topbar {
     width: 100%;
-    color: #BBB;
-    font-size: 13px;
-    font-weight: bold;
+    color: #00c;
+   font:12px arial;
     line-height: 27px;
     border-spacing: 0px;
     white-space: nowrap;
+}
+#topbar a {
+  float: right;
 }
 #topbar tr {
     width: 100%;
@@ -45,22 +47,15 @@ button:hover {
 #topbar td {
     height: 28px;
     margin: 0px;
-    background-color: #2d2d2d;
     white-space: nowrap;
     cursor: pointer;
+    float: right;
 }
-#topbar td:hover {
-    color: #FFF;
-}
-#topbar td.selected {
-    color: #FFF;
-}
+
 #topbar td.empty {
     cursor: auto;
 }
-#topbar td.empty:hover {
-    background-color: #2d2d2d;
-}
+
 #topbar td span {
     display: block;
     padding: 1px 8px 0px 10px;
@@ -74,7 +69,7 @@ button:hover {
 #content #logo {
     margin-bottom: 17px;
 }
-#content input {
+/*#content input {
     width: 560px;
     padding: 4px 9px;
     margin-bottom: 16px;
@@ -82,17 +77,15 @@ button:hover {
     border: 1px solid #d9d9d9;
     border-top-color: #c0c0c0;
     color: #000000;
-}
-#content input:hover {
+}*/
+/*#content input:hover {
     border: 1px solid #b9b9b9;
     border-top-color: #a0a0a0;
 }
 #content input:focus {
     outline: 0;
-    /* this removes browser-side outline */
-
 border-color: #4d90fe;
-}
+}*/
 #bottombar {
     position: absolute;
     bottom: 30px;
@@ -173,4 +166,31 @@ border-color: #4d90fe;
 }
 #fusionads .fusion-poweredby {
     color: #ccc;
+}
+
+.s_btn_wr {
+width: 97px;
+height: 34px;
+display: inline-block;
+background-position: -120px -48px;
+z-index: 0;
+vertical-align: top;
+}
+.bg {
+background-image: url(resource/icons_.png);
+background-repeat: no-repeat;
+}
+
+.s_btn {
+width: 95px;
+height: 32px;
+padding-top: 2px\9;
+font-size: 14px;
+background-color: #ddd;
+background-position: 0 -48px;
+cursor: pointer;
+}
+
+.s_btn_h {
+background-position: -240px -48px;
 }
