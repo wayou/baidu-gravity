@@ -42,7 +42,7 @@ var delta = [ 0, 0 ];
 
 					if (param[0] == "q") {
 
-						document.getElementById('kw1').value = param[1];
+						document.getElementById('q').value = param[1];
 						run();
 						break;
 					}
@@ -152,6 +152,7 @@ var delta = [ 0, 0 ];
 
 			function onDocumentKeyUp( event ) {
 
+event.preventDefault();
 				if ( event.keyCode == 13 ) search();
 
 			}
@@ -235,7 +236,7 @@ var delta = [ 0, 0 ];
 
 				if ( event.target == document.getElementById( 'btnG' ) ) search();
 				if ( event.target == document.getElementById( 'btnI' ) ) imFeelingLucky();
-				if ( event.target == document.getElementById( 'kw1' ) ) document.getElementById('kw1').focus();
+				if ( event.target == document.getElementById( 'q' ) ) document.getElementById('q').focus();
 
 			}
 
@@ -249,7 +250,7 @@ var delta = [ 0, 0 ];
 
 				}
 
-				if ( query == document.getElementById('kw1').value ) {
+				if ( query == document.getElementById('q').value ) {
 
 					page ++;
 
@@ -260,7 +261,7 @@ var delta = [ 0, 0 ];
 
 					page = 0;
 
-					query = document.getElementById('kw1').value;
+					query = document.getElementById('q').value;
 
 					gWebSearch.execute( query );
 					gImageSearch.execute( query );
@@ -274,7 +275,7 @@ var delta = [ 0, 0 ];
 			function imFeelingLucky() {
 
 				imFeelingLuckyMode = true;
-				gWebSearch.execute( document.getElementById('kw1').value );
+				gWebSearch.execute( document.getElementById('q').value );
 
 				return false;
 
