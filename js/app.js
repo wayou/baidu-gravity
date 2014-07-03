@@ -67,7 +67,6 @@ var delta = [ 0, 0 ];
 
 				document.addEventListener( 'keyup', onDocumentKeyUp, false );
 
-
 				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
 				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 				document.addEventListener( 'touchend', onDocumentTouchEnd, false );
