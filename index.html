@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>Google Gravity</title> 
+		<style>
+			body {
+
+				margin: 0;
+				overflow: hidden;
+				background-color: #ffffff;
+				font-family: Arial, sans-serif;
+
+				user-select: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-o-user-select: none;
+				-ms-user-select: none;
+
+			}
+
+			button {
+
+				height: 29px;
+				padding: 0 8px;
+				color: #444;
+				background-color: #f4f4f4;
+				border: 1px solid #d9d9d9;
+				border-radius: 2px;
+				font-family: Arial, sans-serif;
+				font-size: 11px;
+				font-weight: bold;
+				text-align: center;
+				cursor: pointer;
+
+			}
+
+				button:hover {
+
+					color: #222;
+					background-color: #f8f8f8;
+					-webkit-linear-gradient(top,#f8f8f8,#f1f1f1)
+					border: 1px solid #c6c6c6;
+					-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1)
+
+				}
+
+			#topbar {
+
+				width: 100%;
+				color: #BBB;
+				font-size: 13px;
+				font-weight: bold;
+				line-height: 27px;
+				border-spacing: 0px;
+				white-space: nowrap;
+
+			}
+
+				#topbar tr {
+
+					width: 100%;
+					margin: 0px;
+					padding: 0px;
+
+				}
+
+				#topbar td {
+
+					height: 28px;
+					margin: 0px;
+					background-color: #2d2d2d;
+					white-space: nowrap;
+					cursor: pointer;
+
+				}
+
+					#topbar td:hover {
+
+						color: #FFF;
+
+					}
+
+					#topbar td.selected {
+
+						color: #FFF;
+
+					}
+
+				#topbar td.empty {
+
+					cursor: auto;
+
+				}
+
+					#topbar td.empty:hover {
+
+						background-color: #2d2d2d;
+
+					}
+
+
+				#topbar td span {
+
+					display: block;
+					padding: 1px 8px 0px 10px;
+
+				}
+
+			#content {
+
+				width: 100%;
+				text-align: center;
+				margin-top: 162px;
+
+				white-space: nowrap;
+
+			}
+
+				#content #logo {
+
+					margin-bottom: 17px;
+
+				}
+
+				#content input {
+
+					width: 560px;
+					padding: 4px 9px;
+					margin-bottom: 16px;
+					font: 16px arial,sans-serif;
+					border: 1px solid #d9d9d9;
+					border-top-color: #c0c0c0;
+
+					color: #000000;
+
+				}
+
+					#content input:hover {
+
+						border: 1px solid #b9b9b9;
+						border-top-color: #a0a0a0;
+
+					}
+
+					#content input:focus {
+
+						outline: 0; /* this removes browser-side outline */
+						border-color: #4d90fe;
+
+					}
+
+			#bottombar {
+
+				position: absolute;
+				bottom: 30px;
+				width: 100%;
+				height: 1px;
+				line-height: 0px;
+				border-spacing: 0px;
+
+			}
+
+				#bottombar tr {
+
+					width: 100%;
+					margin: 0px;
+					padding: 0px;
+
+				}
+
+				#bottombar td {
+
+					height: 1px;
+					margin: 0px;
+					padding: 0px;
+					background-color: #ebebeb;
+
+				}
+
+			#footer {
+
+				position: absolute;
+				right: 50px;
+				bottom: 10px;
+				width: 100%;
+				font-size: 13px;
+				text-align: right;
+				white-space: nowrap;
+
+			}
+
+				#footer * {
+
+					margin: 0px 9px;
+
+				}
+
+				#footer a {
+
+					color: #666;
+					text-decoration: none;
+
+				}
+
+					#footer a:hover {
+
+						text-decoration: underline;
+
+					}
+
+			.result {
+
+				width: 546px;
+
+			}
+
+				.result .title {
+
+					color: #2200C1;
+					font-size: 16px;
+					font-weight: normal;
+
+				}
+
+					.result .title a:active {
+
+						color: #2200C1;
+
+					}
+
+				.result .url {
+
+					color: #0e774a;
+					font-size: 13px;
+
+				}
+
+				.result .content {
+
+					font-size: 13px;
+
+				}
+
+			#fusionads {
+				position: absolute;
+				top: 40px;
+				left: 10px;
+				width: 130px;
+				padding: 10px;
+				font-size: 12px;
+				background-color: #fff;
+				border: 1px solid #eee;
+			}
+
+				#fusionads a {
+					color: #666;
+					text-decoration: none;
+				}
+
+				#fusionads .fusion-wrap {
+					display: block;
+					margin-bottom: 5px;
+				}
+
+				#fusionads .fusion-img {
+					display: block;
+					margin-bottom: 5px;
+				}
+
+				#fusionads .fusion-poweredby {
+					color: #ccc;
+				}	
+
+		</style>
+	</head>
+	<body>
+
+		<script src="http://cdn.webglstats.com/stat.js" defer="defer" async="async"></script>
+
+		<script type="text/javascript"> 
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-86951-7']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+		  })();
+		</script>
+
+		<table id="topbar">
+			<tr>
+				<td class="box2d" onClick="location.href = 'https://plus.google.com/?gpsrc=ogpy0&tab=wX';"><span>+You</span></td>
+				<td class="box2d selected" onClick="location.href = 'http://www.google.com/webhp?hl=en&tab=ww';"><span>Search</span></td>
+				<td class="box2d" onClick="location.href = 'http://www.google.com/imghp?hl=en&tab=wi';"><span>Images</span></td>
+				<td class="box2d" onClick="location.href = 'http://maps.google.com/maps?hl=en&tab=wl';"><span>Maps</span></td>
+				<td class="box2d" onClick="location.href = 'https://play.google.com/?hl=en&tab=w8';"><span>Play</span></td>
+				<td class="box2d" onClick="location.href = 'http://www.youtube.com/?tab=w1';"><span>YouTube</span></td>
+				<td class="box2d" onClick="location.href = 'http://news.google.com/nwshp?hl=en&tab=wn';"><span>News</span></td>
+				<td class="box2d" onClick="location.href = 'https://mail.google.com/mail/?tab=wm';"><span>Gmail</span></td>
+				<td class="box2d" onClick="location.href = 'https://drive.google.com/?tab=wo';"><span>Drive</span></td>
+				<td class="box2d" onClick="location.href = 'https://www.google.com/calendar?tab=wc';"><span>Calendar</span></td>
+				<td class="box2d" onClick="location.href = 'http://www.google.com/intl/en/options/';"><span>More</span></td>
+				<td class="box2d empty" style="width:10%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:20%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:20%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:10%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:5%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:5%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:20%"><span>&nbsp;</span></td>
+			</tr>
+		</table>
+
+		<span style="position:absolute;top:50px;right:30px;"><button id="btnG" class="box2d" style="color:#fff;font-size:11px;font-weight:bold;padding: 0 16px;border:1px solid transparent;background-color:#d14836;text-transform: uppercase;">Sign in</button></span>
+
+		<div id="content">
+			<img id="logo" src="resource/baidu_logo.gif" class="box2d"><br />
+			<input id="q" value="" title="Search" autocomplete="off" type="text" maxlength="2048" class="box2d"><br />
+			<span style="margin: 0 4px;"><button id="btnG" class="box2d">Google Search</button></span>
+			<span style="margin: 0 4px;"><button id="btnI" class="box2d">I'm Feeling Lucky</button></span>
+		</div>
+
+		<table id="bottombar">
+			<tr>
+				<td class="box2d" style="width:10%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:12%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:8%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:4%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:4%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:5%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:4%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:2%"><span>&nbsp;</span></td>
+			</tr>
+		</table>
+
+		<div id="footer">
+			<a href="http://www.google.com/intl/en/ads/" class="box2d">Advertising Programs</a>
+			<a href="http://www.google.com/services/" class="box2d">Business Solutions</a>
+			<a href="http://www.google.com/intl/en/policies/" class="box2d">Privacy & Terms</a>
+			<a href="https://plus.google.com/116899029375914044550" class="box2d">+Google</a>
+			<a href="http://www.google.com/intl/en/about.html" class="box2d">About Google</a>
+		</div>
+
+		<script src="http://www.google.com/uds/api?file=uds.js&v=0.1" type="text/javascript"></script>
+	<script src="js/inheritance.js"></script>
+	<script src="js/box2d.js"></script>
+	<script src="js/app.js"></script>
+
+	</body>
+</html>
