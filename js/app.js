@@ -1,5 +1,5 @@
 var delta = [ 0, 0 ];
-			var stage = [ window.screenX, window.screenY, window.innerWidth, window.innerHeight-100 ];
+			var stage = [ window.screenX, window.screenY, window.innerWidth, window.innerHeight ];
 			getBrowserDimensions();
 
 			var isRunning = false;
